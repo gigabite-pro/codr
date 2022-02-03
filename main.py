@@ -35,7 +35,7 @@ def display_commands():
 	for i in commands:
 		print(str(index) + '.', commands[i])
 		index += 1
-	print('\n')
+	print()
 
 init()
 

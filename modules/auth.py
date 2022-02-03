@@ -9,8 +9,8 @@ def prompt():
     global input_username
     global input_password
     global hashed_password
-    input_username = input("> Username: ").strip()
-    input_password = input("> Password: ")
+    input_username = input("Username: ").strip()
+    input_password = input("Password: ")
     hashed_password = bcrypt.hashpw(input_password.encode("utf-8"), bcrypt.gensalt())
 
 def authenticate(username, password):

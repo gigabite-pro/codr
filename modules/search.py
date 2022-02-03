@@ -5,7 +5,7 @@ import webbrowser
 table = []
 
 def open_file():
-    open_index = input('\n> Enter the index of the project you want to open: ')
+    open_index = input('\nEnter the index of the project you want to open: ')
     if open_index.isdigit():
         if int(open_index) <= len(table):
             webbrowser.open(table[int(open_index)-1][2])
@@ -20,7 +20,8 @@ def open_file():
 
 def search():
     counter = 1
-    query = input('> Search query: ')
+    print()
+    query = input('Search query: ')
     with open('projects.csv', 'r') as projects:
         reader = csv.reader(projects)
         for row in reader:
@@ -28,6 +29,6 @@ def search():
                 row.insert(0, counter)
                 counter += 1
                 table.append(row)
-    
+    print()
     print(tabulate.tabulate(table, headers=['Index','Name', 'Path', 'Tech Stack', 'Files','Date Created'], tablefmt='grid'))
     open_file()
