@@ -1,13 +1,12 @@
-from modules import create
-from modules import auth
+from modules import create, auth, view, search
 
 prefix = 'codr'
 commands = {
 	'register': 'register - to create an account',
 	'login': 'login - to login into your account',
 	'create': 'create - to create a new project',
+	'view': 'view - to view old projects',
 	'search': 'search - to search for old projects',
-	'view': 'view - to view an old project',
 	'help': 'help - to see the list of commands',
 	'quit': 'quit - to quit the program'
 }
@@ -15,6 +14,7 @@ commands = {
 file = open('auth.csv', 'a')
 file.close()
 logged_in = False
+
 
 welcome_logo = '''
 ░█████╗░░█████╗░██████╗░██████╗░
@@ -27,10 +27,10 @@ welcome_logo = '''
 def init():
 	print(welcome_logo)
 	print('\nWelcome to codr!\n')
-	print('Please use the following commands with the prefix "codr" (codr <command>)\n')
 	display_commands()
 
 def display_commands():
+	print('\nPlease use the following commands with the prefix "codr" (codr <command>)\n')
 	index = 1
 	for i in commands:
 		print(str(index) + '.', commands[i])
@@ -56,6 +56,18 @@ while True:
 						create.create()
 					else:
 						print('\nPlease login to use this command.\n')
+				if command == 'view':
+					if logged_in == True:
+						view.view()
+					else:
+						print('\nPlease login to use this command.\n')
+				if command == 'search':
+					if logged_in == True:
+						search.search()
+					else:
+						print('\nPlease login to use this command.\n')
+				if command == 'help':
+					display_commands()
 				if command == 'quit':
 					print('\nThank you for using codr!')
 					break

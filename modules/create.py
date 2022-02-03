@@ -3,6 +3,8 @@ from time import sleep
 from alive_progress import alive_bar
 import os
 import webbrowser
+import datetime
+import csv
 
 tech_stacks = {
 	'node.js': 'krismuniz/minimal-starter',
@@ -69,6 +71,9 @@ def create():
 		print(project_name, 'successfully built.')
 		print('Path of project: ', root_path, '\n')
 		webbrowser.open(root_path)
+		with open('projects.csv', 'a') as projects:
+			writer = csv.writer(projects,lineterminator='\n')
+			writer.writerow([project_name, root_path, tech_stack, file_count, datetime.datetime.now()])
 	else:
 		print('\nWarning: Choose one from the given list.')
 		create()
