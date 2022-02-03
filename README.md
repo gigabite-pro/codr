@@ -1,6 +1,6 @@
 # Codr - CLI tool to help start your coding projects
 
-## Class XII CS Project - [Demo](https://github.com/gigabite-pro/codr)
+## Class XII CS Project - [Demo](https://youtu.be/v1EGrT0pAu0)
 
 ## Problem
 Beginners in software development have a lot of ideas they want to work on but don't yet have the technical know-how to set up their projects. This becomes especially tedious and difficult when they are bombarded with multiple templates and boilerplates on the internet. 
