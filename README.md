@@ -1,7 +1,6 @@
 # Codr - CLI tool to help start your coding projects
 
 ## Class XII CS Project - [Demo](https://github.com/gigabite-pro/codr)
-<br>
 
 ## Problem
 Beginners in software development have a lot of ideas they want to work on but don't yet have the technical know-how to set up their projects. This becomes especially tedious and difficult when they are bombarded with multiple templates and boilerplates on the internet. 
@@ -16,11 +15,11 @@ Codr is an CLI tool. It uses CSV files instead of a SQL database to reduce exter
 Our objective with Codr is to help beginners in creating and managing their projects through an easy-to-use interface. Codr will allow users to create new projects of varying technologies, view older projects, and search for projects using a specific command for each.
 
 ## Features
-1. Register: to enable registration for new users<br>
-2. Login: for existing users who want to login into their accounts<br>
-3. Create: to create a new project of a particular technology<br>
-4. View: to view past projects along with their details<br>
-5. Search: to search for projects created using our tool<br>
+1. **Register**: to enable registration for new users<br>
+2. **Login**: for existing users who want to login into their accounts<br>
+3. **Create**: to create a new project of a particular technology<br>
+4. **View**: to view past projects along with their details<br>
+5. **Search**: to search for projects created using our tool<br>
 
 ## External Packages
 - bcrypt
