@@ -16,7 +16,16 @@ file = open('auth.csv', 'a')
 file.close()
 logged_in = False
 
+welcome_logo = '''
+░█████╗░░█████╗░██████╗░██████╗░
+██╔══██╗██╔══██╗██╔══██╗██╔══██╗
+██║░░╚═╝██║░░██║██║░░██║██████╔╝
+██║░░██╗██║░░██║██║░░██║██╔══██╗
+╚█████╔╝╚█████╔╝██████╔╝██║░░██║
+░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝'''
+
 def init():
+	print(welcome_logo)
 	print('Welcome to codr!\n')
 	print('Please use the following commands with the prefix "codr" (codr <command>)\n')
 	display_commands()
