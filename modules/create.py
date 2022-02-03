@@ -23,8 +23,8 @@ def compute():
 def create():
 	print()
 	print('Tech Stacks:\n> Node.js\n> Svelte\n> Flask\n')
-	tech_stack = input('Enter tech stack for your project: ')
-	if tech_stack.lower() in tech_stacks.keys():
+	tech_stack = input('Enter tech stack for your project: ').lower()
+	if tech_stack in tech_stacks.keys():
 		project_name = input('Enter your project name: ')		
 		
 		root_path = os.path.join(os.getcwd().split('codr')[0], project_name)
