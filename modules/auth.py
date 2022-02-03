@@ -9,7 +9,7 @@ def prompt():
     global input_username
     global input_password
     global hashed_password
-    input_username = input("Unique Username: ").strip()
+    input_username = input("Username: ").strip()
     input_password = input("Password: ")
     hashed_password = bcrypt.hashpw(input_password.encode("utf-8"), bcrypt.gensalt())
 
@@ -47,12 +47,12 @@ def register():
     prompt()
     added = add_to_csv(input_username, hashed_password)
     if(added):
-        print("\nRegistration successful")
+        print("\nRegistration successful.\n")
     else:
-        print("\nUsername already exists")
+        print("\nUsername already exists.\n")
 
 def login():
     prompt()
     (checker, msg) = authenticate(input_username, input_password)
-    print(f"\n{msg}")
+    print(f"\n{msg}\n")
     return checker

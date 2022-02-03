@@ -2,6 +2,7 @@ import requests
 from time import sleep
 from alive_progress import alive_bar
 import os
+import webbrowser
 
 tech_stacks = {
 	'Node.js': 'krismuniz/minimal-starter',
@@ -39,6 +40,8 @@ def create():
 		    for i in compute():
 		        bar()
 		print()
+		print('Finalizing...')
+		print()
 
 		for i in data:
 		    if i['type'] == 'file':
@@ -65,6 +68,7 @@ def create():
 
 		print(project_name, 'successfully built.')
 		print('Path of project: ', root_path, '\n')
+		webbrowser.open(root_path)
 	else:
 		print('\nWarning: Choose one from the given list.')
 		create()

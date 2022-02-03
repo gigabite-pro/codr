@@ -36,12 +36,17 @@ while True:
 		if any_input.startswith('codr '):
 			command = any_input.split()[1]
 			if command in commands.keys():
-				if command == 'create':
-					create.create()
 				if command == 'register':
+					print()
 					auth.register()
 				if command == 'login':
+					print()
 					logged_in = auth.login()
+				if command == 'create':
+					if logged_in == True:
+						create.create()
+					else:
+						print('\nPlease login to use this command.\n')
 				if command == 'quit':
 					print('\nThank you for using codr!')
 					break
