@@ -26,7 +26,7 @@ welcome_logo = '''
 
 def init():
 	print(welcome_logo)
-	print('Welcome to codr!\n')
+	print('\nWelcome to codr!\n')
 	print('Please use the following commands with the prefix "codr" (codr <command>)\n')
 	display_commands()
 

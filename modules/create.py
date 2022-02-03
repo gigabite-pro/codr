@@ -5,9 +5,9 @@ import os
 import webbrowser
 
 tech_stacks = {
-	'Node.js': 'krismuniz/minimal-starter',
-	'Svelte': 'sveltejs/template',
-	'Flask': 'seanpquig/dead-simple-flask-app' 
+	'node.js': 'krismuniz/minimal-starter',
+	'svelte': 'sveltejs/template',
+	'flask': 'seanpquig/dead-simple-flask-app' 
 }
 
 base_api_url = 'https://api.github.com'
@@ -24,7 +24,7 @@ def create():
 	print()
 	print('Tech Stacks:\n> Node.js\n> Svelte\n> Flask\n')
 	tech_stack = input('Enter tech stack for your project: ')
-	if tech_stack in tech_stacks.keys():
+	if tech_stack.lower() in tech_stacks.keys():
 		project_name = input('Enter your project name: ')		
 		
 		root_path = os.path.join(os.getcwd().split('codr')[0], project_name)
