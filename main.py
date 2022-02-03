@@ -1,4 +1,5 @@
 from modules import create
+from modules import auth
 
 prefix = 'codr'
 commands = {
@@ -10,6 +11,10 @@ commands = {
 	'help': 'help - to see the list of commands',
 	'quit': 'quit - to quit the program'
 }
+
+file = open('auth.csv', 'a')
+file.close()
+logged_in = False
 
 def init():
 	print('Welcome to codr!\n')
@@ -33,6 +38,10 @@ while True:
 			if command in commands.keys():
 				if command == 'create':
 					create.create()
+				if command == 'register':
+					auth.register()
+				if command == 'login':
+					logged_in = auth.login()
 				if command == 'quit':
 					print('\nThank you for using codr!')
 					break
