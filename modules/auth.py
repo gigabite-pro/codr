@@ -14,31 +14,37 @@ def prompt():
     hashed_password = bcrypt.hashpw(input_password.encode("utf-8"), bcrypt.gensalt())
 
 def authenticate(username, password):
-    with open('auth.csv', 'r') as auth:
-        reader = csv.reader(auth)
-        for row in reader:
-            if row[0] == username:
-                if bcrypt.checkpw(password.encode("utf-8"), row[1].encode("utf-8")):
-                    return (True, "Login successful")
-                else:
-                    return (False, "Invalid Credentials")
-        return (False, "Account doesn't exist")
+    try:
+        with open('auth.csv', 'r') as auth:
+            reader = csv.reader(auth)
+            for row in reader:
+                if row[0] == username:
+                    if bcrypt.checkpw(password.encode("utf-8"), row[1].encode("utf-8")):
+                        return (True, "Login successful")
+                    else:
+                        return (False, "Invalid Credentials")
+            return (False, "Account doesn't exist")
+    except FileNotFoundError:
+        return (False, "Please register first.")
 
 def check_account(username):
-    with open('auth.csv', 'r') as auth:
-        reader = csv.reader(auth)
-        for row in reader:
-            if row[0] == username:
-                return True
+    try:
+        with open('auth.csv', 'r') as auth:
+            reader = csv.reader(auth)
+            for row in reader:
+                if row[0] == username:
+                    return True
+            return False
+    except FileNotFoundError:
         return False
 
 def add_to_csv(username, password):
     checker = check_account(username)
-    if not checker:
+    if not checker:  
         with open('auth.csv', 'a+') as auth:
             writer = csv.writer(auth, delimiter=',',lineterminator='\n')
             writer.writerow([username, password.decode("utf-8")])
-            return True
+            return True           
     else:
         return False
 

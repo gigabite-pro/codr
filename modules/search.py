@@ -19,16 +19,19 @@ def open_file():
         open_file()
 
 def search():
-    counter = 1
-    print()
-    query = input('Search query: ')
-    with open('projects.csv', 'r') as projects:
-        reader = csv.reader(projects)
-        for row in reader:
-            if query in row[0]:
-                row.insert(0, counter)
-                counter += 1
-                table.append(row)
-    print()
-    print(tabulate.tabulate(table, headers=['Index','Name', 'Path', 'Tech Stack', 'Files','Date Created'], tablefmt='grid'))
-    open_file()
+    try:
+        counter = 1
+        print()
+        query = input('Search query: ')
+        with open('projects.csv', 'r') as projects:
+            reader = csv.reader(projects)
+            for row in reader:
+                if query in row[0]:
+                    row.insert(0, counter)
+                    counter += 1
+                    table.append(row)
+        print()
+        print(tabulate.tabulate(table, headers=['Index','Name', 'Path', 'Tech Stack', 'Files','Date Created'], tablefmt='grid'))
+        open_file()
+    except FileNotFoundError:
+        print('\nNo projects to search.\n')

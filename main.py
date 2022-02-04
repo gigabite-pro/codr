@@ -70,5 +70,5 @@ while True:
 					display_commands()
 					print('If you have any further doubts, you can open an issue here: https://github.com/gigabite-pro/codr\n')
 				if command == 'quit':
-					print('\nThank you for using codr!')
+					print('\nThank you for using codr!\n')
 					break
