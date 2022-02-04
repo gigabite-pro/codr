@@ -30,7 +30,11 @@ def create():
 		project_name = input('Enter your project name: ')		
 		
 		root_path = os.path.join(os.getcwd().split('codr')[0], project_name)
-		os.mkdir(root_path)
+		try:
+			os.mkdir(root_path)
+		except FileExistsError:
+			print('\nError: Project name already exists!\n')
+			create()
 		
 		r = requests.get(base_api_url + '/repos/' + tech_stacks[tech_stack] + '/contents')
 		data = list(r.json())

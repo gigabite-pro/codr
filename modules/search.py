@@ -32,6 +32,10 @@ def search():
                     table.append(row)
         print()
         print(tabulate.tabulate(table, headers=['Index','Name', 'Path', 'Tech Stack', 'Files','Date Created'], tablefmt='grid'))
-        open_file()
+        file_input = input('\nDo you want to open any project? (y/n): ')
+        if file_input.lower() == 'y':
+            open_file()
+        else:
+            table.clear()
     except FileNotFoundError:
         print('\nNo projects to search.\n')
