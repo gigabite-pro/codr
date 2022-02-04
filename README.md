@@ -25,6 +25,7 @@ Our objective with Codr is to help beginners in creating and managing their proj
 - bcrypt
 - tabulate
 - alive-progress
+- requests
 
 ## To run the project
 - clone the repository - `git clone https://github.com/gigabite-pro/codr.git`
