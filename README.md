@@ -25,3 +25,8 @@ Our objective with Codr is to help beginners in creating and managing their proj
 - bcrypt
 - tabulate
 - alive-progress
+
+## To run the project
+- clone the repository - `git clone https://github.com/gigabite-pro/codr.git`
+- install the required packages - `pip install -r requirements.txt`
+- run the program - `python main.py`
