@@ -9,7 +9,7 @@ This variety of options and solutions to their problem leads to them getting con
 Additionally, even experienced developers when learning a new technology don’t have an idea how to set up the basic project folder structure. All of this creates the need for an easy-to-use and more accessible project management system.
 
 ## Solution
-Codr is an CLI tool. It uses CSV files instead of a SQL database to reduce external dependencies and make the product more accessible. There is a menu that would be displayed to the user, where he can initially choose to either register or log in. Once he’s logged in, the menu would display the commands which the user can run to perform further actions.
+Codr is a CLI tool. It uses CSV files instead of a SQL database to reduce external dependencies and make the product more accessible. There is a menu that would be displayed to the user, where he can initially choose to either register or log in. Once he’s logged in, the menu would display the commands which the user can run to perform further actions.
 
 ## Objective
 Our objective with Codr is to help beginners in creating and managing their projects through an easy-to-use interface. Codr will allow users to create new projects of varying technologies, view older projects, and search for projects using a specific command for each.
@@ -28,6 +28,6 @@ Our objective with Codr is to help beginners in creating and managing their proj
 - requests
 
 ## To run the project
-- clone the repository - `git clone https://github.com/gigabite-pro/codr.git`
-- install the required packages - `pip install -r requirements.txt`
-- run the program - `python main.py`
+- Clone the repository - `git clone https://github.com/gigabite-pro/codr.git`
+- Install the required packages - `pip install -r requirements.txt`
+- Run the program - `python main.py`
