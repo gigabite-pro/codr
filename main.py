@@ -29,6 +29,15 @@ def init():
 	print('\nWelcome to codr!\n')
 	display_commands()
 
+def init_auth():
+	password = input('Root Password: ')
+	if password == 'tswashere':
+		print('\nLogged in as root!\n')
+		init()
+	else:
+		print('\nIncorrect Password\n')
+		init_auth()
+
 def display_commands():
 	print('\nPlease use the following commands with the prefix "codr" (codr <command>)\n')
 	index = 1
@@ -37,7 +46,7 @@ def display_commands():
 		index += 1
 	print()
 
-init()
+init_auth()
 
 while True:
 	any_input = input('> ')
