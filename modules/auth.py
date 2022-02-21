@@ -5,6 +5,7 @@ input_username = ""
 input_password = ""
 hashed_password = ""
 
+#prompts user for username and password
 def prompt():
     global input_username
     global input_password
@@ -13,6 +14,7 @@ def prompt():
     input_password = input("Password: ")
     hashed_password = bcrypt.hashpw(input_password.encode("utf-8"), bcrypt.gensalt())
 
+#authenticates user by comparing username and password
 def authenticate(username, password):
     try:
         with open('auth.csv', 'r') as auth:
@@ -27,6 +29,7 @@ def authenticate(username, password):
     except FileNotFoundError:
         return (False, "Please register first.")
 
+#checks if account exists
 def check_account(username):
     try:
         with open('auth.csv', 'r') as auth:
@@ -38,6 +41,7 @@ def check_account(username):
     except FileNotFoundError:
         return False
 
+#adds user to csv
 def add_to_csv(username, password):
     checker = check_account(username)
     if not checker:  
@@ -48,7 +52,7 @@ def add_to_csv(username, password):
     else:
         return False
 
-
+# handles registration
 def register():
     prompt()
     added = add_to_csv(input_username, hashed_password)
@@ -57,6 +61,7 @@ def register():
     else:
         print("\nUsername already exists.\n")
 
+#handles login
 def login():
     prompt()
     (checker, msg) = authenticate(input_username, input_password)

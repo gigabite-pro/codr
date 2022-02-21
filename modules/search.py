@@ -4,6 +4,7 @@ import webbrowser
 
 table = []
 
+#opens the file according to the user input
 def open_file():
     open_index = input('\nEnter the index of the project you want to open: ')
     if open_index.isdigit():
@@ -18,6 +19,7 @@ def open_file():
         print('\nInvalid index.\n')
         open_file()
 
+#prompts the user for search query and asks if user wants to open a project
 def search():
     try:
         counter = 1

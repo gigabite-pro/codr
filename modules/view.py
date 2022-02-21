@@ -1,6 +1,7 @@
 import csv
 import tabulate
 
+# Displays a table of all the projects with neccessary data
 def view():
     try:
         table = []
@@ -14,4 +15,3 @@ def view():
         print()
     except FileNotFoundError:
         print('\nNo projects to view.\n')
-    
