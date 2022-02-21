@@ -11,6 +11,16 @@ commands = {
 	'quit': 'quit - to quit the program'
 }
 
+# Structure for the project is as follows:
+# main.py - main file with the menu-driven program that calls other modules and functions if the user chooses to do so
+# modules folder - contains the modules files that are called by the main file
+# modules/auth.py - contains the functions that authenticate the user and maintain the session
+# modules/create.py - contains the functions to create a new project
+# modules/view.py - contains the functions to view old projects
+# modules/search.py - contains the functions to search for old projects
+# auth.csv - stores the user data - username, password, and session
+# projects.csv - stores the project data - project name, project description, and project date
+
 file = open('auth.csv', 'a')
 file.close()
 logged_in = False
@@ -24,20 +34,23 @@ welcome_logo = '''
 ╚█████╔╝╚█████╔╝██████╔╝██║░░██║
 ░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝'''
 
-def init():
+# Displays the menu
+def display_menu():
 	print(welcome_logo)
 	print('\nWelcome to codr!\n')
 	display_commands()
 
-def init_auth():
+# Asks for the root password and then initializes the program
+def init():
 	password = input('Root Password: ')
-	if password == 'tswashere':
+	if password == 'csproject22':
 		print('\nLogged in as root!\n')
-		init()
+		display_menu()
 	else:
 		print('\nIncorrect Password\n')
-		init_auth()
+		init()
 
+# Displays the list of commands
 def display_commands():
 	print('\nPlease use the following commands with the prefix "codr" (codr <command>)\n')
 	index = 1
@@ -46,7 +59,7 @@ def display_commands():
 		index += 1
 	print()
 
-init_auth()
+init()
 
 while True:
 	any_input = input('> ')
